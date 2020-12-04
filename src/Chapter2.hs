@@ -25,7 +25,7 @@ In this chapter, you are going to master:
  ✧ Higher-order functions
  ✧ Partial function application
  ✧ Eta-reduction
-
+ 
 As usual, the explanations are in the Haskell comments of this
 module. We are leaving a number of tasks on our path. Your goal is to
 solve them all and make the tests for Chapter Two green.
@@ -347,11 +347,9 @@ from it!
 
 ghci> :l src/Chapter2.hs
 -}
+
 subList :: Int -> Int -> [a] -> [a]
-subList st end arr
-    | (st-1) < 0 || (end-1) < 0 || (st-1) > end || end > (length arr) = []
-    | st == end = [arr !! (end-1)]
-    | otherwise = [arr !! (st-1)] ++ subList (st+1) end arr
+subList st end arr =  
 
 {- |
 =⚔️= Task 4
@@ -524,7 +522,10 @@ True
 >>> isThird42 [42, 42, 0, 42]
 False
 -}
-isThird42 = error "isThird42: Not implemented!"
+
+isThird42 :: [Int] -> Bool
+isThird42 (x : y : 42 : xs) =  True
+isThird42 _ = False
 
 
 {- |

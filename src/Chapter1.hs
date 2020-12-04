@@ -520,7 +520,7 @@ branches because it is an expression and it must always return some value.
   satisfying the check will be returned and, therefore, evaluated.
 -}
 closestToZero :: Int -> Int -> Int
-closestToZero x y = if (abs x) < (abs y) || (abs x) == (abs y) then x else y
+closestToZero x y = if abs x < abs y || abs x == abs y then x else y
                       
 
 
@@ -641,7 +641,7 @@ specifying complex expressions.
 -}
 
 sumLast2 :: Int -> Int
-sumLast2 n = let sums = (mod n 10) + (mod (div n 10) 10) in sums  
+sumLast2 n = let sums = mod n 10 + mod (div n 10) 10 in sums  
 
 
 {- |
