@@ -349,7 +349,7 @@ ghci> :l src/Chapter2.hs
 -}
 
 subList :: Int -> Int -> [a] -> [a]
-subList st end arr =  
+subList st end arr = "No idea!!" 
 
 {- |
 =⚔️= Task 4
